@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="center">
+
+<div class="card form-card">
+<h2>🔐 Admin Login</h2>
+
+<input id="username" placeholder="Username"/>
+<input id="password" type="password" placeholder="Password"/>
+
+<button class="btn primary" onclick="login()">Login</button>
+
+<p id="error" class="error"></p>
+</div>
+
+<script>
+async function login(){
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const res = await fetch("/login",{
+    method:"POST",
+    headers:{ "Content-Type":"application/json"},
+    body:JSON.stringify({username,password})
+  });
+
+  if(res.ok){
+    localStorage.setItem("admin","true");
+    window.location="admin.html";
+  }else{
+    document.getElementById("error").innerText="Invalid credentials";
+  }
+}
+</script>
+
+</body>
+</html>

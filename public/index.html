@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hostel Complaint Portal</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="center">
+
+<div class="card form-card">
+<h2>🏨 Hostel Complaint Portal</h2>
+
+<form id="complaintForm">
+<input id="name" placeholder="Student Name" required />
+<input id="room" placeholder="Room Number (B-203)" required />
+<input id="email" type="email" placeholder="Email" required />
+
+<select id="category" title="Complaint Category" required>
+<option value="">Select Category</option>
+<option value="Electricity">⚡ Electricity</option>
+<option value="Water">🚿 Water</option>
+<option value="WiFi">🌐 WiFi</option>
+<option value="Cleaning">🧹 Cleaning</option>
+<option value="Other">📌 Other</option>
+</select>
+
+<input id="subject" placeholder="Issue Title" required />
+<textarea id="description" placeholder="Describe the issue"></textarea>
+
+<button type="submit" class="btn primary">Submit Complaint</button>
+</form>
+
+<a href="admin.html" class="link">Go to Admin Dashboard →</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

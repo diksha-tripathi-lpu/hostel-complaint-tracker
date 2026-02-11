@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hostel Admin Dashboard</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<h2>🏨 Hostel Admin Dashboard</h2>
+</div>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <p class="menu-title">MENU</p>
+
+  <a class="menu active" data-view="dashboard">Dashboard</a>
+  <a class="menu" data-view="complaints">Complaints</a>
+  <a class="menu" data-view="rooms">Rooms</a>
+  <a class="menu" data-view="students">Students</a>
+
+  <a href="index.html">← User Portal</a>
+  <a onclick="logout()">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="stats">
+  <div class="stat blue stat-card" data-filter="all">
+    <p>Total</p>
+    <h2 id="totalCount">0</h2>
+  </div>
+
+  <div class="stat orange stat-card" data-filter="pending">
+    <p>Pending</p>
+    <h2 id="pendingCount">0</h2>
+  </div>
+
+  <div class="stat green stat-card" data-filter="resolved">
+    <p>Resolved</p>
+    <h2 id="resolvedCount">0</h2>
+  </div>
+
+  <div class="stat red stat-card" data-filter="rejected">
+    <p>Rejected</p>
+    <h2 id="rejectedCount">0</h2>
+  </div>
+</div>
+
+<input id="searchBox" class="search" placeholder="Search by student or subject..."/>
+
+<div id="complaintList"></div>
+
+</div>
+</div>
+
+<script>
+if(localStorage.getItem("admin")!=="true"){
+  window.location="login.html";
+}
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
